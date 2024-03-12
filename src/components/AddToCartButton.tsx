@@ -1,7 +1,8 @@
 "use client"
+import React from 'react'
 import {useCartContext} from "@/context/CartContext"
 
-import React from 'react'
+
 
 export const AddToCartButton = ({productName}:{productName:string}) => {
   

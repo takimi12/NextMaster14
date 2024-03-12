@@ -1,4 +1,5 @@
 
+
 type ProductListItemDescriptionProps = {
 	name: string;
 };

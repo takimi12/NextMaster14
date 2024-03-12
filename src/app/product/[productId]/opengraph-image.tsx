@@ -1,7 +1,10 @@
-import { getProduct } from '@/app/api/product'
-import { ImageResponse } from 'next/og'
-import { notFound } from "next/navigation";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { ImageResponse } from 'next/og'
+import { getProduct } from '@/app/api/product'
+
+
+
 
 // Image metadata
 export const alt = 'Sklep'

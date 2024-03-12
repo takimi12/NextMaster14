@@ -1,5 +1,5 @@
-import { ProductList } from "@/components/ProductList";
 import { getProductsByName } from "../api/product";
+import { ProductList } from "@/components/ProductList";
 
 export default async function SearchResultPage({
 	searchParams,

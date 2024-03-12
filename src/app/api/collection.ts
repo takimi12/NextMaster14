@@ -1,6 +1,6 @@
-import { Collection } from "@/model/collection";
 import { redirect } from "next/navigation";
 import { executeGraphql } from "./graphql";
+import { Collection } from "@/model/collection";
 import { CollectionGetByIdDocument, CollectionsGetListDocument } from "@/gql/graphql";
 
 export const getCollectionsList = async (): Promise<Collection[]> => {
