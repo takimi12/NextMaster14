@@ -1,4 +1,3 @@
-
 import { getCollectionById, getCollectionsList } from "@/app/api/collection";
 import { ProductList } from "@/components/ProductList";
 
@@ -22,3 +21,4 @@ export async function generateStaticParams() {
 		id: collection.id,
 	}));
 }
+

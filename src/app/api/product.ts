@@ -1,4 +1,4 @@
-import { type SearchProduct } from "@/model/searchProduct";
+import { executeGraphql } from "./graphql";
 import {
 	GetSingleProductDocument,
 	ProductGetReviewsByIdDocument,
@@ -10,10 +10,9 @@ import {
 	ProductsGetAllQuery,
 	ReviewAddDocument,
 	ReviewPublushAddDocument,
+	
 } from "@/gql/graphql";
-
-
-import { executeGraphql } from "./graphql";
+import { type SearchProduct } from "@/model/searchProduct";
 
 export type ProductFromResponse = {
 	id: string;
@@ -30,9 +29,6 @@ type Rating = {
 	rate: number;
 	count: number;
 };
-
-
-
 
 
 const getProductsWithAvgRating=(products:ProductsGetAllQuery["products"])=>{
@@ -67,6 +63,10 @@ function sortDESC(a:any, b:any) {
   }
 }
 
+export const getAllProductsCount=async ()=>{
+		const {productsConnection}= await executeGraphql(ProductsGetAllPaginatedDocument, { skip: 0, first: 20 })
+		return productsConnection.aggregate.count
+}
 
 
 export const getAllProductsPaginated = async (currentPage: number, perPage: number, sortOrder:string) => {

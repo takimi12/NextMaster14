@@ -10796,7 +10796,7 @@ export type ProductsGetAllPaginatedQueryVariables = Exact<{
 }>;
 
 
-export type ProductsGetAllPaginatedQuery = { products: Array<{ id: string, name: string, price: number, description: string, categories: Array<{ name: string }>, images: Array<{ url: string }> }> };
+export type ProductsGetAllPaginatedQuery = { products: Array<{ id: string, name: string, price: number, description: string, categories: Array<{ name: string }>, images: Array<{ url: string }> }>, productsConnection: { aggregate: { count: number } } };
 
 export type ProductsGetAllPaginatedAscQueryVariables = Exact<{
   skip: Scalars['Int']['input'];
@@ -10988,6 +10988,11 @@ export const ProductsGetAllPaginatedDocument = new TypedDocumentString(`
     }
     images {
       url
+    }
+  }
+  productsConnection {
+    aggregate {
+      count
     }
   }
 }
