@@ -1,0 +1,19 @@
+query CollectionGetById($id: ID!) {
+	collection(where: { id: $id }) {
+		id
+		name
+		products {
+			description
+			id
+			name
+			price
+			description
+			categories {
+				name
+			}
+			images {
+				url
+			}
+		}
+	}
+}

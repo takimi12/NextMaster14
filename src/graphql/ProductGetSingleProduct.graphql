@@ -1,0 +1,21 @@
+query GetSingleProduct($id: ID) {
+  product(where: {id: $id}) {
+    name
+    description
+    price
+    categories {
+      name
+    }
+    images {
+      url
+    }
+    variants {
+      ... on ProductSizeColorVariant {
+        id
+        name
+        size
+        color
+      }
+    }
+  }
+}

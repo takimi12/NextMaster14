@@ -1,0 +1,15 @@
+query ProductGetSimilar($categoryName: String!) {
+  products(where: {categories_every: {_search: $categoryName}}, first: 4) {
+    description
+    id
+    name
+    price
+    description
+    categories {
+      name
+    }
+    images {
+      url
+    }
+  }
+}

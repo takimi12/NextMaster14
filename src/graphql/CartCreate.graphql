@@ -1,0 +1,11 @@
+mutation CartCreate($email: String!, $stripeCheckoutId: String!) {
+	createOrder(
+		data: {
+			email: $email
+			stripeCheckoutId: $stripeCheckoutId
+			total: 0 # Dodaj inne wymagane pola
+		}
+	) {
+		id
+	}
+}

@@ -1,0 +1,14 @@
+query ProductsGetAllPaginatedAsc($skip: Int!, $first: Int!) {
+	products(skip: $skip, first: $first,orderBy: price_ASC) {
+		id
+		name
+		price
+		description
+		categories {
+			name
+		}
+		images {
+			url
+		}
+	}
+}

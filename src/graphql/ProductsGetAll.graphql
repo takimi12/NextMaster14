@@ -1,0 +1,17 @@
+query ProductsGetAll {
+  products {
+    id
+    name
+    price
+    description
+    reviews {
+      rating
+    }
+    categories {
+      name
+    }
+    images {
+      url
+    }
+  }
+}
